@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sriram V – Data Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F6F8;--surface:#FFFFFF;--ink:#101828;--muted:#556070;--line:#D9DEE5;--accent:#F2C811;--teal:#0F766E;--bar:#C5CDD8;
+  --display:'Bricolage Grotesque','Segoe UI',Arial,sans-serif;--body:'Instrument Sans','Segoe UI',Arial,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E131B;--surface:#161D28;--ink:#EEF1F5;--muted:#9AA6B6;--line:#273140;--bar:#33415A;--teal:#4FD1C5;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E131B;--surface:#161D28;--ink:#EEF1F5;--muted:#9AA6B6;--line:#273140;--bar:#33415A;--teal:#4FD1C5;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;font-weight:500}
+nav .links{display:flex;gap:22px;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--ink)}
+nav .me{font-family:var(--display);font-weight:800;color:var(--ink);font-size:1.15rem}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:end;padding:56px 0 72px}
+h1{font:800 clamp(2.6rem,6.5vw,4.9rem)/1 var(--display);letter-spacing:-.03em;margin:0 0 24px}
+.hero p{max-width:34em;color:var(--muted);margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#101828}
+.btn:hover{transform:translateY(-1px)}
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px 22px 14px}
+.chart small{display:block;color:var(--muted);font-size:.85rem;margin-bottom:10px}
+.bars{display:flex;align-items:flex-end;gap:9px;height:190px;border-bottom:2px solid var(--ink)}
+.bars i{flex:1;background:var(--bar);border-radius:5px 5px 0 0;height:var(--h);transform-origin:bottom;animation:grow .9s cubic-bezier(.2,.8,.2,1) both}
+.bars i.hi{background:var(--accent)}
+@keyframes grow{from{transform:scaleY(0)}}
+@media (prefers-reduced-motion:reduce){.bars i{animation:none}html{scroll-behavior:auto}}
+.chart .cap{margin-top:10px;font-size:.85rem;color:var(--muted)}
+section{padding:64px 0;border-top:1px solid var(--line)}
+h2{font:700 clamp(1.8rem,3.5vw,2.5rem)/1.1 var(--display);letter-spacing:-.02em;margin:0 0 28px}
+h3{font:700 1.3rem/1.25 var(--display);margin:0 0 6px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.about p{margin:0 0 16px;max-width:36em}
+.facts{list-style:none;margin:0;padding:0}
+.facts li{padding:14px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px}
+.facts span{color:var(--muted)}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:32px;display:grid;grid-template-columns:1fr;gap:28px}
+.shot{margin:0}.shot img{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line)}.shot figcaption{font-size:.88rem;color:var(--muted);margin-top:8px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 6px}.kpis div{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px 18px}.kpis b{display:block;font:800 1.9rem/1.1 var(--display)}.kpis span{color:var(--muted);font-size:.9rem}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 18px}
+.tag{font-size:.88rem;padding:3px 12px;border-radius:999px;background:var(--bg);border:1px solid var(--line)}
+.proj ul{margin:0;padding-left:1.1em}.proj li{margin-bottom:10px}
+.dash{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:10px;align-content:start}
+.dash .row{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+.dash .box{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px;font-size:.8rem;color:var(--muted)}
+.dash .box b{display:block;color:var(--ink);font:700 .95rem var(--display);margin-bottom:6px}
+.dash svg{width:100%;height:auto;display:block}
+.dash .note{font-size:.78rem;color:var(--muted);margin:0}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.skills h3{font-size:1.05rem;margin-bottom:10px}
+.skills ul{list-style:none;margin:0;padding:0}
+.skills li{padding:7px 0;border-bottom:1px solid var(--line)}
+.edu{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:32px}
+.edu p{margin:0;color:var(--muted)}
+.certs{display:grid;grid-template-columns:1fr 1fr;gap:12px;list-style:none;margin:0;padding:0}
+.certs li{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:8px;padding:14px 16px}
+.certs span{display:block;color:var(--muted);font-size:.9rem}
+.contact{font-size:clamp(1.2rem,2.5vw,1.6rem);font-family:var(--display);font-weight:500}
+.contact a{display:block;padding:6px 0;text-decoration-thickness:2px;text-underline-offset:5px;text-decoration-color:var(--accent)}
+footer{padding:28px 0 40px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+@media (max-width:820px){
+  .hero,.two,.proj{grid-template-columns:1fr}.kpis{grid-template-columns:1fr}
+  .skills{grid-template-columns:1fr}.certs{grid-template-columns:1fr}
+  .hero{padding-top:28px}.proj{padding:22px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <span class="me">Sriram V</span>
+    <div class="links"><a href="#about">About</a><a href="#project">Project</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a></div>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <h1>I turn raw data into dashboards people can act on.</h1>
+      <p>I’m Sriram, a data analyst working with SQL, Excel and Power BI. I clean messy datasets, find the pattern in them, and show it in a way a business can use the same day. I’m open to roles in Chennai and willing to relocate.</p>
+      <div class="btns">
+        <a class="btn primary" href="#project">See my project</a>
+        <a class="btn" href="mailto:sriramm1803@gmail.com">Email me</a>
+      </div>
+    </div>
+    <div class="chart" aria-hidden="true">
+      <small>Monthly sales trend: one month stands out</small>
+      <div class="bars">
+        <i style="--h:38%;animation-delay:.05s"></i><i style="--h:52%;animation-delay:.1s"></i><i style="--h:45%;animation-delay:.15s"></i><i style="--h:63%;animation-delay:.2s"></i><i style="--h:58%;animation-delay:.25s"></i><i style="--h:78%;animation-delay:.3s"></i><i class="hi" style="--h:96%;animation-delay:.35s"></i><i style="--h:70%;animation-delay:.4s"></i><i style="--h:60%;animation-delay:.45s"></i>
+      </div>
+      <div class="cap">Illustration, not real data</div>
+    </div>
+  </header>
+
+  <section id="about" class="two about">
+    <div>
+      <h2>About me</h2>
+      <p>I’m a detail-oriented analyst who cares about accuracy first. Most of my work starts with cleaning: fixing dates, names and categories so the numbers can be trusted.</p>
+      <p>From there I explore the data, test what it says, and build visuals that answer a clear business question. I’m always learning, and I’m looking for an entry-level data analyst role where I can grow.</p>
+    </div>
+    <ul class="facts">
+      <li>Role <span>Data Analyst</span></li>
+      <li>Based in <span>Ranipet, Tamil Nadu, India</span></li>
+      <li>Location <span>Open to Chennai, willing to relocate</span></li>
+      <li>Languages <span>English, Tamil</span></li>
+      <li>Main tools <span>SQL, Excel, Power BI</span></li>
+    </ul>
+  </section>
+
+  <section id="project">
+    <h2>Project</h2>
+    <article class="proj">
+      <div>
+        <h3>Coffee Sales Dashboard</h3>
+        <div class="tags"><span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">Advanced Excel</span></div>
+        <div class="kpis"><div><b>115.43K</b><span>Total sales</span></div><div><b>3,636</b><span>Transactions</span></div><div><b>31.75</b><span>Average price</span></div></div>
+        <ul>
+          <li>Built a single-page Power BI dashboard on coffee shop transactions covering revenue, order volume, product mix and time-of-day sales.</li>
+          <li>Cleaned the data with SQL and Excel (Pivot Tables, VLOOKUP, conditional formatting) before loading it into Power BI.</li>
+          <li>Designed KPI cards that show total revenue and the top-selling product at a glance.</li>
+          <li>Combined revenue and order count in a monthly trend chart to track performance and seasonality.</li>
+          <li>Found that Americano is the best seller, followed by Latte and Cappuccino, and that sales are split almost evenly across the day: night 33.82%, afternoon 33.8%, morning 32.38%.</li><li>Spotted two sales peaks in the year, in March and October, with orders rising and falling alongside revenue.</li>
+        </ul>
+      </div>
+      <figure class="shot"><img src="/_blob/67138ea6c0ff24f95b723e44246509fb" alt="Coffee Sales Dashboard in Power BI: KPI cards, monthly sales trend, sales by product and sales by time of day"><figcaption>The finished Power BI dashboard.</figcaption></figure>
+    </article>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div><h3>Tools</h3><ul><li>MySQL</li><li>Microsoft Excel: advanced formulas, Pivot Tables, VLOOKUP/XLOOKUP</li><li>Power BI: DAX, data modeling, dashboards</li><li>Python: Jupyter Notebooks, variables, lists, control flow</li></ul></div>
+      <div><h3>Analysis</h3><ul><li>Data cleaning</li><li>Data visualization</li><li>Exploratory data analysis</li><li>Statistical analysis</li></ul></div>
+      <div><h3>Working style</h3><ul><li>Problem solving</li><li>Effective communication</li><li>Time management</li></ul></div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education and certifications</h2>
+    <div class="edu">
+      <div><h3>Bachelor of Computer Science</h3><p>C. Abdul Hakeem College (Autonomous)</p></div>
+      <div><h3>2023 to 2026</h3><p>Aggregate: 65.58%</p></div>
+    </div>
+    <ul class="certs">
+      <li>Google Data Analytics Certificate<span>Google</span></li>
+      <li>Introduction to Data Analysis<span>Simplilearn</span></li>
+      <li>SQL for Data Analysis<span>Simplilearn</span></li>
+      <li>Data Analysis Job Simulation<span>Deloitte</span></li>
+      <li>AI Tools Certificate<span>C. Abdul Hakeem College</span></li>
+      <li>Data Analyst Skill Certification<span>OneRoadmap</span></li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Let’s talk</h2>
+    <p style="color:var(--muted);margin:-12px 0 20px">Available for roles in Chennai. Willing to relocate.</p>
+    <div class="contact">
+      <a href="mailto:sriramm1803@gmail.com">sriramm1803@gmail.com</a>
+      <a href="tel:+919080669690">+91 90806 69690</a>
+      <a href="https://linkedin.com/in/srirammm" target="_blank" rel="noopener">linkedin.com/in/srirammm</a>
+    </div>
+  </section>
+
+  <footer>© 2026 Sriram V. Ranipet, Tamil Nadu. Open to Chennai and willing to relocate.</footer>
+</div>
+</body>
+</html>
